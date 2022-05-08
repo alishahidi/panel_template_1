@@ -180,3 +180,42 @@ getElemClassAll(".angle-drop-down").map((element) => {
 getElemId("full-screen").addEventListener("click", () => {
   toggleFullScreen();
 });
+
+$(document).ready(function () {
+  $(".grid-table").DataTable({
+    language: {
+      decimal: "",
+      emptyTable: "داده ای وجود ندارد.",
+      info: "مشاهده _START_ تا _END_ از _TOTAL_ داده",
+      infoEmpty: "مشاهده 0 تا 0 از 0 داده",
+      infoFiltered: "(filtered from _MAX_ total entries)",
+      infoPostFix: "",
+      thousands: ",",
+      lengthMenu: "نمایش _MENU_ داده",
+      loadingRecords: "در حال بارگزاری...",
+      processing: "در حال انجام عملیات...",
+      search: "جستجو: ",
+      zeroRecords: "داده ای پیدا نشد.",
+      paginate: {
+        first: "اول",
+        last: "آخر",
+        next: "بعدی",
+        previous: "قبلی",
+      },
+      aria: {
+        sortAscending: ": مرتب از کم به زیاد",
+        sortDescending: ": مرتب از زیاد به کم",
+      },
+    },
+  });
+});
+
+const uploadFile = (target) => {
+  getElemId("image").alt = "loading";
+  getElemId("file-name").innerHTML = target.files[0].name;
+  var reader = new FileReader();
+  reader.onload = function (e) {
+    $("#image").attr("src", e.target.result);
+  };
+  reader.readAsDataURL(target.files[0]);
+};

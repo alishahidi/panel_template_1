@@ -12,7 +12,6 @@
   justify-content: space-around;
   z-index: 1000;
   align-items: stretch;
-  box-shadow: 0 4px 22.4px 0px rgba(70, 90, 100, 0.3);
   transition: all 0.3s;
 }
 
@@ -33,7 +32,8 @@
 }
 
 .body-header {
-  background-color: rgba(252, 246, 245, 0.356);
+  background-color: #fbf8f1;
+  color: #333333;
   width: calc(100% - 15rem);
   transition: all 0.3s;
 }
@@ -45,7 +45,7 @@
 }
 
 .body-header-fix-bg {
-  background-color: rgba(252, 246, 245, 0.938);
+  background-color: #fbf8f1d7;
 }
 
 .search-area {
@@ -67,7 +67,6 @@
   width: 20rem;
   background-color: #fffffff1;
   color: #222629;
-  box-shadow: 0 1px 20px 0 rgba(70, 90, 100, 0.08);
   z-index: 100;
 }
 
@@ -104,7 +103,6 @@
   max-height: 70vh;
   background-color: #fffffff1;
   color: #222629;
-  box-shadow: 0 1px 20px 0 rgba(70, 90, 100, 0.08);
   z-index: 100;
 }
 
@@ -136,8 +134,8 @@
 .header-name {
   color: #333333;
   font-size: 0.8rem;
+  font-weight: normal;
 }
-
 .header-profile {
   left: 0;
   margin-top: 0.2rem;
@@ -145,7 +143,6 @@
   max-height: 70vh;
   background-color: #fffffff1;
   color: #222629;
-  box-shadow: 0 1px 20px 0 rgba(70, 90, 100, 0.08);
   z-index: 100;
 }
 
@@ -318,10 +315,14 @@ button {
   font-size: 0.8rem;
 }
 
+.main-body {
+  background-color: #121212;
+}
+
 .main-body-container {
-  background-color: #ddddddb5;
+  background-color: #292929;
+  border: 1px solid #ffffff;
   margin: 1rem 0;
-  border-radius: 0.44456rem;
   padding: 1.7rem;
 }
 
@@ -341,11 +342,29 @@ button {
 
 .main-body-container-header h5 {
   font-size: 1.4rem;
+  color: snow;
+}
+
+.main-body-container-header h4 {
+  color: snow;
 }
 
 .main-body-container-header p {
   font-size: 0.9rem;
-  color: #474b4f;
+  color: #cfcecb;
+}
+
+.main-body-container .body-content p {
+  color: snow;
+}
+
+.main-body-container .body-content label{
+  color: snow;
+  font-weight: bold;
+}
+
+.main-body-container .body-content label::after{
+  content: " : ";
 }
 
 .body-content {
@@ -354,7 +373,7 @@ button {
 
 .body-content p {
   font-size: 0.98rem;
-  color: #101820;
+  color: #ffffff;
   text-align: justify;
 }
 
@@ -378,7 +397,7 @@ button {
     height: calc(100% - 3.5rem);
   }
 
-  .bg-soft-blue {
+  .bg-soft-dark {
     background-color: rgba(16, 24, 32, 0.996);
     color: #eeeeeeff;
   }
@@ -402,9 +421,8 @@ td {
 
 .form-control {
   padding: 0.232rem 0.73rem !important;
-  background-color: rgba(255, 250, 250, 0.549) !important;
+  background-color: #f7f9fb !important;
   color: #333 !important;
-  height: 33px !important;
   font-size: 0.9rem !important;
   padding: 0.3rem 0.7rem !important;
 }

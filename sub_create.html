@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="./favicon.png" />
+    <title>Panel v1</title>
+    <link rel="stylesheet" href="styles/bootstrap.min.css">
+    <link rel="stylesheet" href="styles/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="styles/dataTables.bootstrap5.min.css" />
+    <link rel="stylesheet" href="styles/responsive.bootstrap5.min.css" />
+    <link rel="stylesheet" href="styles/jquery-confirm.min.css" />
+    <link rel="stylesheet" href="styles/flatpickr.min.css" />
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/grid.css">
+</head>
+
+<body dir="rtl">
+    <section class="app-bg"></section>
+    <section class="app">
+        <header class="header" id="header">
+            <section class="sidebar-header bg-dark">
+                <div class="d-flex justify-content-between flex-md-row-reverse px-3">
+                    <span id="sidebar-toggle-show" class="d-inline d-md-none"><i
+                            class="bi bi-toggle2-off c-pointer"></i></span>
+                    <span id="sidebar-toggle-hide" class="d-none d-md-inline"><i
+                            class="bi bi-toggle2-on c-pointer"></i></span>
+                    <h2 class="header-logo">نام پروژه</h2>
+                    <span id="sidebar-menu-toggle" class="d-md-none"><i class="bi bi-three-dots c-pointer"></i></span>
+                </div>
+            </section>
+
+            <section class="body-header d-md-block" id="body-header">
+                <div class="d-flex justify-content-between">
+                    <div>
+                        <span class="me-4">
+                            <span id="search-area" class="search-area d-none">
+                                <i id="search-area-hide" class="bi bi-x c-pointer"></i>
+                                <input type="text" class="search-input" />
+                                <i class="bi bi-search c-pointer"></i>
+                            </span>
+                            <i id="search-area-show" class="bi bi-search p-1 d-md-inline d-none c-pointer"></i>
+                        </span>
+                        <span id="full-screen" class="c-pointer d-none p-1 d-md-inline me-3">
+                            <i id="screen-expand" class="bi bi-fullscreen"></i>
+                            <i id="screen-compress" class="bi bi-fullscreen-exit d-none"></i>
+                        </span>
+                    </div>
+                    <div>
+                        <span class="ms-2 ms-md-4 position-relative">
+                            <span id="header-notification-toggle" class="c-pointer">
+                                <i class="bi bi-bell"></i><sub class="badge rounded-pill bg-primary badge-fix">۴</sub>
+                            </span>
+                            <div id="header-notification"
+                                class="position-absolute header-notification rounded-3 border d-none">
+                                <div class="d-flex justify-content-between">
+                                    <span class="px-2"> اعلانات </span>
+                                    <span class="px-2">
+                                        <span class="badge bg-info">جدید</span>
+                                    </span>
+                                </div>
+                                <div class="header-notification-wrapper scroll-hide">
+                                    <ul class="list-group rounded px-0">
+                                        <li
+                                            class="list-group-item list-group-item-action rounded-0 border-start-0 border-end-0">
+                                            <div class="d-flex">
+                                                <img src="./images/avatar-1.jpg" alt="اسم تست"
+                                                    class="notification-img me-3 rounded-circle" />
+                                                <div class="pe-2">
+                                                    <h5 class="fw-bold mt-2 notification-name">
+                                                        اسم تست
+                                                    </h5>
+                                                    <p class="notification-text">
+                                                        این یک پیام تست است.
+                                                    </p>
+                                                    <span class="notification-time">۳۰ دقیقه پیش</span>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li
+                                            class="list-group-item list-group-item-action rounded-0 border-start-0 border-end-0">
+                                            <div class="d-flex">
+                                                <img src="./images/avatar-2.jpg" alt="اسم تست"
+                                                    class="notification-img me-3 rounded-circle" />
+                                                <div class="pe-2">
+                                                    <h5 class="fw-bold mt-2 notification-name">
+                                                        اسم تست
+                                                    </h5>
+                                                    <p class="notification-text">
+                                                        این یک پیام تست است.
+                                                    </p>
+                                                    <span class="notification-time">۳۰ دقیقه پیش</span>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li
+                                            class="list-group-item list-group-item-action rounded-0 border-start-0 border-end-0">
+                                            <div class="d-flex">
+                                                <img src="./images/avatar-3.jpg" alt="اسم تست"
+                                                    class="notification-img me-3 rounded-circle" />
+                                                <div class="pe-2">
+                                                    <h5 class="fw-bold mt-2 notification-name">
+                                                        اسم تست
+                                                    </h5>
+                                                    <p class="notification-text">
+                                                        این یک پیام تست است.
+                                                    </p>
+                                                    <span class="notification-time">۳۰ دقیقه پیش</span>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </span>
+
+                        <span class="ms-2 ms-md-4 position-relative">
+                            <span>
+                                <span id="header-comment-toggle" class="c-pointer">
+                                    <i class="bi bi-chat-square-text"></i><sub
+                                        class="badge rounded-pill bg-primary badge-fix">۲</sub>
+                                </span>
+
+                                <div id="header-comment"
+                                    class="position-absolute header-comment rounded-3 border d-none">
+                                    <section class="border-bottom px-4">
+                                        <input type="text" class="form-control form-control-sm my-4"
+                                            placeholder="جستجو....." />
+                                    </section>
+                                    <section class="header-comment-wrapper scroll-hide">
+                                        <ul class="list-group rounded px-0">
+                                            <li
+                                                class="list-group-item list-group-item-action rounded-0 border-start-0 border-end-0">
+                                                <div class="d-flex">
+                                                    <img src="./images/avatar-1.jpg" alt="اسم تست"
+                                                        class="comment-img me-3 rounded-circle" />
+                                                    <div class="pe-3 d-flex justify-content-between w-100 mt-3">
+                                                        <h5 class="fw-bold mt-2 comment-name">اسم تست</h5>
+                                                        <span><i
+                                                                class="bi bi-circle-fill comment-icon text-success"></i></span>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li
+                                                class="list-group-item list-group-item-action rounded-0 border-start-0 border-end-0">
+                                                <div class="d-flex">
+                                                    <img src="./images/avatar-2.jpg" alt="اسم تست"
+                                                        class="comment-img me-3 rounded-circle" />
+                                                    <div class="pe-3 d-flex justify-content-between w-100 mt-3">
+                                                        <h5 class="fw-bold mt-2 comment-name">اسم تست</h5>
+                                                        <span><i
+                                                                class="bi bi-circle-fill comment-icon text-success"></i></span>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li
+                                                class="list-group-item list-group-item-action rounded-0 border-start-0 border-end-0">
+                                                <div class="d-flex">
+                                                    <img src="./images/avatar-3.jpg" alt="اسم تست"
+                                                        class="comment-img me-3 rounded-circle" />
+                                                    <div class="pe-3 d-flex justify-content-between w-100 mt-3">
+                                                        <h5 class="fw-bold mt-2 comment-name">اسم تست</h5>
+                                                        <span><i
+                                                                class="bi bi-circle-fill comment-icon text-success"></i></span>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li
+                                                class="list-group-item list-group-item-action rounded-0 border-start-0 border-end-0">
+                                                <div class="d-flex">
+                                                    <img src="./images/avatar-4.jpg" alt="اسم تست"
+                                                        class="comment-img me-3 rounded-circle" />
+                                                    <div class="pe-3 d-flex justify-content-between w-100 mt-3">
+                                                        <h5 class="fw-bold mt-2 comment-name">اسم تست</h5>
+                                                        <span><i
+                                                                class="bi bi-circle-fill comment-icon text-success"></i></span>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li
+                                                class="list-group-item list-group-item-action rounded-0 border-start-0 border-end-0">
+                                                <div class="d-flex">
+                                                    <img src="./images/avatar-1.jpg" alt="اسم تست"
+                                                        class="comment-img me-3 rounded-circle" />
+                                                    <div class="pe-3 d-flex justify-content-between w-100 mt-3">
+                                                        <h5 class="fw-bold mt-2 comment-name">اسم تست</h5>
+                                                        <span><i
+                                                                class="bi bi-circle-fill comment-icon text-success"></i></span>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li
+                                                class="list-group-item list-group-item-action rounded-0 border-start-0 border-end-0">
+                                                <div class="d-flex">
+                                                    <img src="./images/avatar-2.jpg" alt="اسم تست"
+                                                        class="comment-img me-3 rounded-circle" />
+                                                    <div class="pe-3 d-flex justify-content-between w-100 mt-3">
+                                                        <h5 class="fw-bold mt-2 comment-name">اسم تست</h5>
+                                                        <span><i
+                                                                class="bi bi-circle-fill comment-icon text-success"></i></span>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li
+                                                class="list-group-item list-group-item-action rounded-0 border-start-0 border-end-0">
+                                                <div class="d-flex">
+                                                    <img src="./images/avatar-3.jpg" alt="اسم تست"
+                                                        class="comment-img me-3 rounded-circle" />
+                                                    <div class="pe-3 d-flex justify-content-between w-100 mt-3">
+                                                        <h5 class="fw-bold mt-2 comment-name">اسم تست</h5>
+                                                        <span><i
+                                                                class="bi bi-circle-fill comment-icon text-success"></i></span>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li
+                                                class="list-group-item list-group-item-action rounded-0 border-start-0 border-end-0">
+                                                <div class="d-flex">
+                                                    <img src="./images/avatar-4.jpg" alt="اسم تست"
+                                                        class="comment-img me-3 rounded-circle" />
+                                                    <div class="pe-3 d-flex justify-content-between w-100 mt-3">
+                                                        <h5 class="fw-bold mt-2 comment-name">اسم تست</h5>
+                                                        <span><i
+                                                                class="bi bi-circle-fill comment-icon text-success"></i></span>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </section>
+                                </div>
+                            </span>
+                        </span>
+
+                        <span class="ms-3 ms-md-5 position-relative">
+                            <span id="header-profile-toggle" class="c-pointer">
+                                <img src="./images/avatar-1.jpg" class="header-avatar img-fluid me-3 rounded" alt="" />
+                                <span class="header-name">اسم تست</span>
+                                <i class="bi bi-chevron-down icon-position-fix"></i>
+                            </span>
+                            <div id="header-profile"
+                                class="header-profile rounded position-absolute rounded-3 border d-none">
+                                <div></div>
+                                <div class="d-flex justify-content-between">
+                                    <span class="w-100 text-center"> منو دسترسی </span>
+                                </div>
+                                <div class="header-profile-wrapper scroll-hide">
+                                    <ul class="list-group rounded px-0">
+                                        <li
+                                            class="list-group-item list-group-item-action header-profile-item rounded-0 border-start-0 border-end-0">
+                                            <div class="d-flex">
+                                                <i class="bi bi-gear-fill icon-position-fix-md"></i>
+                                                <span class="me-3">تنظیمات</span>
+                                            </div>
+                                        </li>
+                                        <li
+                                            class="list-group-item list-group-item-action header-profile-item rounded-0 border-start-0 border-end-0">
+                                            <div class="d-flex">
+                                                <i class="bi bi-person-fill icon-position-fix-md"></i>
+                                                <span class="me-3">کاربر</span>
+                                            </div>
+                                        </li>
+                                        <li
+                                            class="list-group-item list-group-item-action header-profile-item rounded-0 border-start-0 border-end-0">
+                                            <div class="d-flex">
+                                                <i class="bi bi-envelope-fill icon-position-fix-md"></i>
+                                                <span class="me-3">پیام ها</span>
+                                            </div>
+                                        </li>
+                                        <li
+                                            class="list-group-item list-group-item-action header-profile-item rounded-0 border-start-0 border-end-0">
+                                            <div class="d-flex">
+                                                <i class="bi bi-lock-fill icon-position-fix-md"></i>
+                                                <span class="me-3">قفل صفحه</span>
+                                            </div>
+                                        </li>
+                                        <li
+                                            class="list-group-item list-group-item-action header-profile-item rounded-0 border-start-0 border-end-0">
+                                            <div class="d-flex">
+                                                <i class="bi bi-door-open-fill icon-position-fix-md"></i>
+                                                <span class="me-3">خروج</span>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </span>
+                    </div>
+                </div>
+            </section>
+        </header>
+
+        <section class="body-container d-flex">
+            <aside id="sidebar" class="sidebar bg-soft-dark">
+                <div class="sidebar-container">
+                    <div class="sidebar-wrapper scroll-hide">
+                        <a href="index.html" class="sidebar-link">
+                            <i class="bi bi-house icon-position-fix-md ms-2 sidebar-icon"></i>
+                            <span>خانه</span>
+                        </a>
+                        <a href="sub_index.html" class="sidebar-link">
+                            <i
+                              class="bi bi-house icon-position-fix-md ms-2 sidebar-icon"
+                            ></i>
+                            <span>sub_index</span>
+                          </a>
+                          <a href="sub_create.html" class="sidebar-link">
+                            <i
+                              class="bi bi-house icon-position-fix-md ms-2 sidebar-icon"
+                            ></i>
+                            <span>sub_create</span>
+                          </a>
+            
+                        <div class="sidebar-part-title fw-bold">بخش محتوی</div>
+                        <hr />
+                        <a href="#" class="sidebar-link">
+                            <i class="bi bi-list icon-position-fix-md ms-2 sidebar-icon"></i>
+                            <span>دسته بندی ها</span>
+                        </a>
+                        <div class="sidebar-group-link">
+                            <div class="sidebar-dropdown-toggle">
+                                <i class="bi bi-book-fill icon-position-fix-md ms-2 sidebar-icon"></i>
+                                <span>نوشته ها</span>
+                                <i class="bi bi-chevron-left icon-position-fix-md angle angle-drop-down"></i>
+                            </div>
+                            <div class="sidebar-dropdown">
+                                <a href="#">مقالات</a>
+                                <a href="#">پست ها</a>
+                                <a href="#">دوره ها</a>
+                            </div>
+                        </div>
+                        <div class="sidebar-part-title fw-bold">بخش کاربران</div>
+                        <hr />
+                        <div class="sidebar-group-link">
+                            <div class="sidebar-dropdown-toggle">
+                                <i class="bi bi-people-fill icon-position-fix-md ms-2 sidebar-icon"></i>
+                                <span>کاربران</span>
+                                <i class="bi bi-chevron-left icon-position-fix-md angle angle-drop-down"></i>
+                            </div>
+                            <div class="sidebar-dropdown">
+                                <a href="#">ادمین</a>
+                                <a href="#">مدرس ها</a>
+                                <a href="#">دانشجو</a>
+                            </div>
+                        </div>
+                        <div class="sidebar-part-title fw-bold">بخش تنظیمات</div>
+                        <hr />
+                        <div class="sidebar-group-link">
+                            <div class="sidebar-dropdown-toggle">
+                                <i class="bi bi-gear-fill icon-position-fix-md ms-2 sidebar-icon"></i>
+                                <span>تنظیمات منو</span>
+                                <i class="bi bi-chevron-left icon-position-fix-md angle angle-drop-down"></i>
+                            </div>
+                            <div class="sidebar-dropdown">
+                                <a href="#">منوی هدر</a>
+                                <a href="#">منوی فوتر</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+            <section id="main-body" class="main-body p-3">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="main-body-container">
+                            <div class="main-body-container-header">
+                                <h4 class="fw-bold">عنوان تست</h4>
+                            </div>
+                            <div class="body-content">
+                                <div class="mb-4">
+                                    <a href="#" class="btn btn-light">بازگشت</a>
+                                </div>
+                                <div class="border border-dark p-3 rounded">
+                                    <form class="row" action="#" method="post" enctype="multipart/form-data">
+                                        <div class="row">
+                                            <div class="col-md-12 mb-4">
+                                                <fieldset class="form-group">
+                                                    <label for="title" class="mb-4">عنوان</label>
+                                                    <input name="title" type="text" id="title" class="form-control"
+                                                        placeholder="عنوان ...">
+                                                </fieldset>
+                                            </div>
+                                        </div>
+                                        <div class="row mb-4">
+                                            <div class="col-md-6 mb-4">
+                                                <fieldset class="form-group">
+                                                    <div class="form-group">
+                                                        <label for="image" class="mb-4">اپلود تصویر </label>
+                                                        <section class="inputfile-box">
+                                                            <input type="file" id="file" name="image"
+                                                                class="inputfile form-control-file"
+                                                                onchange='uploadFile(this)'
+                                                                accept="image/png, image/jpeg, image/gif">
+                                                            <label for="file"
+                                                                class="uploade-input mb-4 d-flex flex-column justify-content-center align-items-center c-pointer w-100 file-input-fill">
+                                                                <span>
+                                                                    انتخاب فایل
+                                                                </span>
+                                                                <span id="file-name" class="file-box"> png و jpg فرمت
+                                                                    های قابل قبول</span>
+                                                                <span>
+                                                                </span>
+                                                            </label>
+                                                            <section class=" clear-fix"></section>
+                                                        </section>
+                                                    </div>
+                                                </fieldset>
+                                            </div>
+                                            <div class="col-md-6 mb-4">
+                                                <fieldset class="form-group">
+                                                    <label for="image" class="mb-4">پیش نمایش عکس</label>
+                                                    <section class="col-md-12 d-flex justify-content-center">
+                                                        <img id="image" class="image-preview-md">
+                                                    </section>
+                                                </fieldset>
+                                            </div>
+                                        </div>
+                                        <div class="row mb-4">
+                                            <div class="col-md-12">
+                                                <fieldset class="form-group">
+                                                    <label for="address" class="mb-4">آدرس</label>
+                                                    <input name="address" type="text" id="address" class="form-control"
+                                                        placeholder="آدرس ...">
+                                                </fieldset>
+                                            </div>
+                                        </div>
+                                        <div class="row mb-4">
+                                            <div class="col-md-12 mb-4">
+                                                <fieldset class="form-group">
+                                                    <label for="description" class="mb-4">متن</label>
+                                                    <textarea class="form-control" rows="12" name="description" id="description">تست </textarea>
+                                                </fieldset>
+                                            </div>
+                                        </div>
+                                        <div class="row mb-4">
+                                            <div class="col-md-12">
+                                                <fieldset class="form-group">
+                                                    <div class="form-group">
+                                                        <label for="cat_id" class="mb-4">دسته</label>
+                                                        <select name="cat_id" class="form-control">
+                                                            <option value="1">
+                                                                value
+                                                            </option>
+                                                        </select>
+                                                    </div>
+                                                </fieldset>
+                                            </div>
+                                        </div>
+                                        <div class="row mb-4">
+                                            <div class="col-md-6">
+                                                <section class="form-group">
+                                                    <button type="submit"
+                                                        class="btn btn-outline-dark mt-4">ایجاد</button>
+                                                </section>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </section>
+    </section>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/jquery.dataTables.min.js"></script>
+    <script src="js/dataTables.bootstrap5.min.js"></script>
+    <script src="js/dataTables.responsive.min.js"></script>
+    <script src="js/responsive.bootstrap5.min.js"></script>
+    <script src="js/axios.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/grid.js"></script>
+</body>
+
+</html>
