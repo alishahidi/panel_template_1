@@ -8,6 +8,10 @@
   src: url("./../fonts/Vazir-Medium.woff") format("woff");
 }
 
+body {
+  background-color: #121212;
+}
+
 * {
   direction: rtl;
   text-align: right;
@@ -103,7 +107,6 @@
 label {
   margin-bottom: 0.5rem;
 }
-
 
 .dataTable {
   border: 1px solid #ffffff !important;
